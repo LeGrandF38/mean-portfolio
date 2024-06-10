@@ -1,0 +1,22 @@
+<h2>Portfolio</h2>
+<form (ngSubmit)="addAsset()">
+  <div>
+    <label for="asset">Asset</label>
+    <input type="text" id="asset" [(ngModel)]="asset" name="asset" required>
+  </div>
+  <div>
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" [(ngModel)]="quantity" name="quantity" required>
+  </div>
+  <div>
+    <label for="value">Value</label>
+    <input type="number" id="value" [(ngModel)]="value" name="value" required>
+  </div>
+  <button type="submit">Add Asset</button>
+</form>
+
+<ul>
+  <li *ngFor="let asset of assets">
+    {{ asset.asset }} - {{ asset.quantity }} - {{ asset.value }}
+  </li>
+</ul>
